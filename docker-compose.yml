@@ -23,4 +23,14 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - "9906:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
  
